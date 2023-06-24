@@ -1,0 +1,26 @@
+<div class="test">
+    <div class="col-md-6 child">
+        
+            <h2>Which of these best describes your place?</h2>
+            <div class="row">
+                <button #house id="House" class="button" (click)="Type(house.value)" value="House">
+                    <img width="40" height="40" src="https://img.icons8.com/ios/50/exterior.png" alt="exterior"/>
+                    <h5>House</h5>
+                </button>
+                <button #apartment id="Apartment" class="button" (click)="Type(apartment.value)" value="Apartment">
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/link-company-child.png" alt="link-company-child"/>
+                    <h5>Apartment</h5>
+                </button>
+                <button #villa id="Villa" class="button" (click)="Type(villa.value)" value="Villa">
+                    <img width="64" height="64" src="https://img.icons8.com/external-others-abderraouf-omara/64/external-villa-real-estate-and-houses-others-abderraouf-omara.png" alt="external-villa-real-estate-and-houses-others-abderraouf-omara"/>
+                    <h5>Villa</h5>
+                </button>
+                <button #camp id="Camp" class="button" (click)="Type(camp.value)" value="Camp">
+                    <img width="50" height="50" src="https://img.icons8.com/quill/50/camping-tent.png" alt="camping-tent"/>
+                    <h5>Camp</h5>
+                </button>
+            
+        </div>
+    </div>
+</div>
+<app-footer next="/location" back="/first-step"  ></app-footer>

@@ -1,0 +1,30 @@
+<header>
+    <p class="logo">Home Away</p>
+    <input type="checkbox" name="" class="btn" />
+    <div class="nav">
+        <ol>
+            <li><a (click)="Go()">Home</a></li>
+            <li><a (click)="scroll()">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a (click)="scroll()">Contact</a></li>
+            <li><div class="dropdown">
+                
+                <button class="dropbtn">
+                    <img src="../../assets/profileicon.com.png">
+                    ☰</button>
+                <div class="dropdown-content">
+                  <a routerLink="signup" id="droptext">Sign Up</a>
+                  <a routerLink="auth/login" id="droptext">Login</a>
+                  <a href="#" id="droptext">Log Out</a> <!--Using ngIf Token Is Found-->
+                  <!-- //---- -->
+                  <a id="droptext" *ngIf="role == 'Admin'" href= "/adminprofile">View Profile</a> <!--Using ngIf Token Is Found-->
+                  <a id="droptext" *ngIf="role == 'User'" href= "/profile">View Profile</a> <!--Using ngIf Token Is Found-->
+                  <!-- //---- -->
+
+                  <a routerLink="get-started" id="droptext">Add Property </a> <!--Using ngIf Token Is Found-->
+                </div>
+              </div>
+            </li>
+        </ol>
+    </div>
+</header>

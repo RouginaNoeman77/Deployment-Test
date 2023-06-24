@@ -1,0 +1,302 @@
+
+:host{
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right:0px;
+    width:100%;
+    height: 100%;
+    background-color: rgba(197, 192, 192, 0.5);
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+width: 40%;
+height: 600px;
+box-shadow: 5px 5px 6px rgba(19, 19, 19,0.2);
+border-radius: 5px;
+background-color: #fff;
+display: flex;
+flex-direction: column;
+z-index: 1;
+
+/* position: relative; */
+}
+
+#header {
+    border-bottom: 1px solid #ccc;
+    height: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    align-self: center;
+}
+
+#content{
+    flex-grow: 1;
+    padding: 30px;
+    font-size: 20px;
+    align-content: center;
+    /* z-index: 9; */
+    
+}
+
+#action{
+    display: flex;
+    justify-content:flex-end ;
+    height: 50px;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    align-self: center;
+    align-self: center;
+    justify-content: center;
+
+
+
+}
+
+#action button{
+    height: 30px;
+    width:110px;
+    /* padding: 10px 40px; */
+    display: flex;
+    font-size: 22px;
+    color: black;
+    align-content:space-around;
+    background-color: white;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: black;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+
+button.active {
+  background-color: rgb(183, 183, 183); /* set active background color */
+}
+
+#type{
+    display: flex;
+    border-color: #333;
+    border-width: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    height: 200px;
+
+}
+
+/* ---------------------Rental Type----------------- */
+#type img{
+    height: 30px;
+    width: 30px;
+    align-self: flex-end;
+    padding-bottom: 2px;
+
+}
+
+#type button{
+    width: 110px;
+    height: 90px;
+    border: 1px solid black;
+    background-color: var(--f-mkcy-f);
+    transition-property: transform,background-color,border-color;
+    transition-duration: 0.15s;
+    border-radius: 20px;
+    font-size: medium;
+}
+
+#type button:hover{
+    background-color: rgb(179, 173, 173);
+}
+
+ .title{
+    padding-top: 15px;
+ }
+
+ /* /////////////////// */
+ ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #fde65e;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #fde02f;
+  }
+
+/* /////////Price Div/////////// */
+#PriceDiv{
+    display: flex;
+    border-color: #333;
+    border-width: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    height: 250px;
+}
+
+/* ///////////Currency Range Slider//////// */
+#priceRange
+{
+border-color: #333;
+border-width: 20px;
+}
+
+input[type=range] {
+    appearance: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(33, 137, 175);
+    height: 20px;
+    width: 20px;
+    margin-top: -8px;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    
+    background: #ddd;
+  }
+  
+/* ////////Currency Text Box//////// */
+
+main {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  label {
+    display: block;
+    /* padding: 1rem; */
+  }
+  
+  .currency-input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: max-content;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+  
+    & span {
+      margin: 0 1rem;
+    }
+  
+    & input {
+      border: none;
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+/* /////////////////Counter Button/////////////// */
+.counterbtn{
+    border-radius: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: rgb(33, 137, 175);
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.counterDiv{
+    display: flex;
+    border-color: #333;
+    border-width: 20px;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    height: 80px;
+}
+.counterbox{
+    /* border-radius: ; */
+    width: 80px;
+}
+
+/* ///////////////Drop Downs/////////////// */
+.dropdowns{
+    display: flex;
+    border-color: #333;
+    border-width: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    height: 80px;
+}
+
+
+
+/* /////////////////////////////////// */
+  /* @media all and (max-width: 1172px) {
+    #container {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+  
+    #type, #type button , #type img{
+      flex: 1;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+   */
+    /* .banner-text-item .form input {
+      width: 60%;
+    }
+  
+    .banner-text-item .form .date {
+      width: 30%;
+    }
+  
+    .banner-text-item .form .book {
+      width: 10%;
+      font-size: 14px;
+    }
+  
+    .banner-heading h1 {
+      font-size: 60px;
+    }
+  }
+  
+  @media all and (max-width: 1414px) {
+    .banner-text-item .form input {
+      width: 40%;
+    }
+  
+    .banner-text-item .form .date {
+      width: 30%;
+    }
+  
+    .banner-text-item .form .book {
+      width: 20%;
+      font-size: 14px;
+    } */
+/* } */

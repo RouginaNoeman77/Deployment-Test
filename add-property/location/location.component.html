@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 child">
+        <h2>Where's your place located?</h2>
+        <span>Your address is only shared with guests after they have made a reservation.</span>
+        
+            <div class="image-container">
+                <img alt="" src="https://maps.googleapis.com/maps/api/staticmap?size=629x603&amp;zoom=12&amp;center=31.23435,29.96639&amp;scale=1&amp;&amp;key=AIzaSyCrpUPhpbPzRI4hYC7xE02WKsrxQv0HClI" >
+                <div class="input-container">
+                    
+                    <input [(ngModel)]="this.service.obj.Address" id="image-input" name="image-input" placeholder="Enter your address">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 22px; width: 22px; fill: currentcolor;"><path d="M8 .5C4.96.5 2.5 3 2.5 6s1.83 6.08 5.5 9.25C11.67 12.08 13.5 9 13.5 6A5.5 5.5 0 0 0 8 .5zM8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg>
+                    
+                </div>
+                <div class="area">
+                    <input list="Area" [(ngModel)]="this.service.obj.Area" placeholder="Area">
+                    <datalist id="Area">
+                        <option value="North Coast"></option>
+                        <option value="Sharm El-Sheikh"></option>
+                        <option value="Dahab"></option>
+                        <option value="Hurghada"></option>
+                        <option value="Ras El-Bar "></option>
+                        <option value="Siwa"></option>
+                        <option value="Sant Catherine"></option>
+                        <option value="Ras Shitan"></option>
+                        <option value="Sahl Hasheesh"></option>
+                    </datalist>
+                    <input [(ngModel)]="this.service.obj.Region" placeholder="Region" type="text">
+                </div>
+                
+            </div>
+            
+            
+        </div>
+</div>
+<app-footer next="/counts" back="/place-type"></app-footer>
