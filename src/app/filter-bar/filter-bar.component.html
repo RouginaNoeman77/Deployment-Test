@@ -1,0 +1,40 @@
+
+<!-- <p class="logo">Home Away</p> -->
+<div class="filter-nav row">
+    <input type="checkbox" name="" class="btn" />
+    <div class="nav">
+        <div class="Qform ">
+            <p >Need Help Deciding? </p>         
+        </div>
+        <div class="col-md-1 questBtn"> 
+             <button class=" Qbutton" (click)="dialogueService.showFiltrDialog=true"> Questionaire</button>
+         </div>
+        <div class="col-md-3" id="dialog">
+           
+            <!-- <button (click)="dialogueService.showDialog=true"> 
+                 <img id="filterimg" src="../../assets/filter.png">
+                 <p >Filter</p>
+                </button> -->
+        </div>
+        <ol>               
+            <div  class="img-div ">
+               <button (click)="filterProperty('camp')"><img class="filter-img" src=".././assets/camp.png"></button>
+                <p> Camp</p>
+            </div>
+            <div class="img-div ">
+               <button (click)="filterProperty('house')"><img class="filter-img" src="../../assets/house.png"></button>
+                <p>House </p>
+            </div>
+            <div class="img-div ">
+               <button (click)="filterProperty('villa')"><img class="filter-img" src="../../assets/villa.png"></button>
+                <p>Villa</p>
+            </div>
+            <div class="img-div ">
+               <button (click)="filterProperty('apartment')"><img class="filter-img" src="../../assets/apartment.png"></button>
+                <p> Apartment</p>
+            
+            </div>  
+               
+        </ol>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+
+
+<div id="container" style="overflow-y:scroll;">
+
+    <div id="header">
+        Filters
+    </div>
+
+    <div id="content" class="box overlay">
+        <div id="type" class="row">
+            <div >
+                <p>Property Type</p>
+            </div>
+                <button id="apartment"(click)="rentalTypeAssignment()">
+                
+                    <img src="../../assets/apartment.png"> 
+                    <p>Apartment</p>
+    
+                </button>
+                <button id="camp" (click)="rentalTypeAssignment()">
+                    
+                    <img src="../../assets/camp.png">
+                    <p>Camp</p>
+    
+                </button>
+                <button id="house" (click)="rentalTypeAssignment()">
+                    
+                    <img src="../../assets/house.png">
+                    <p>House</p>
+    
+                </button>
+                <button id="villa" (click)="rentalTypeAssignment()">
+                    
+                    <img src="../../assets/villa.png">
+                    <p>Villa</p>
+    
+                </button>        
+        </div>
+        <div id="counterDiv" class="row">
+            <div class="title">
+                <p>Number Of Guest</p>
+            </div>
+            <div class="row counterDiv" >
+                <button class="counterbtn" (click)="PeopleCounter('-')"> -</button>
+                <input class="counterbox" type="text" value="Number" [(ngModel)]="numOfPeople" disabled>
+                <button class="counterbtn" (click)="PeopleCounter('+')"> + </button>
+
+            </div>
+            
+        </div>
+            
+            <div id="PriceDiv" class="row">
+                <div class="title">
+                   <p>Price Per Night</p>
+                </div>
+                <div>
+                    <main>
+                        <label>
+                          Amount
+                          <div class="currency-input">
+                            <span>E£</span>
+                            <input 
+                              type="float" 
+                              placeholder="Amount" 
+                              [(ngModel)]="priceRange" 
+                              aria-label="Amount"
+                              disabled />
+                            <span>EGP</span>
+                          </div>
+                        </label>
+                      </main>
+
+                      <input [(ngModel)]="priceRange" type="range" class="form-range" id="priceRange" min="100" max="5000" >                      
+                </div>             
+            </div>
+
+
+            <div class="dropdowns">
+                <div class="title">
+                    Region
+                </div>
+                <div style="display: flex; align-items: center;">
+                <select name="regions" id="region" [(ngModel)]="region" >
+                    <option   value="Coastal">Coastal</option>
+                    <option  value="Tropical">Tropical</option>
+                    <option  value="Island">Island</option>
+                    <option   value="Mediterranean">Mediterranean</option>
+                    <option   value="Secluded">Secluded</option>
+                  </select  >
+                </div>
+            </div>
+
+
+            <div class="dropdowns">
+                <div class="title">
+                    Area
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <select name="area" id="area" [(ngModel)]="area">
+                    <option value="Beachside">Beachside</option>
+                    <option value="Beachfront">Beachfront</option>
+                    <option value="Seaside">Seaside</option>
+                    <option value="Coastline">Coastline</option>
+                    <option value="Remote">Remote Beach</option>
+                  </select>
+                </div>
+            </div>
+       
+
+            <div id="action">
+                <button class="Cancel" (click)="dialogService.showDialog=false">Cancel </button>
+                <button (click)="filterProperties()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+   
+<!-- </div> -->

@@ -1,0 +1,49 @@
+.bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-top: 8%; */
+    
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.back{
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 5%;
+    margin-top: 2%;
+    
+    
+}
+.next{
+    background-color:black;
+    color: white;
+    border-color: transparent;
+    border-radius: 25px;
+    width: 100px;
+    height: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-right: 5%;
+    margin-top: 2%;
+    
+}
+
+body{
+    
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+}
