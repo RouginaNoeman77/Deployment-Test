@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 child">
+        <h2>Now, set your price</h2>
+        <span>You can change it anytime.</span>
+        <div class="box">
+            
+            <input type="number" [(ngModel)]="this.service.obj.PricePerNight" [disabled]="!isEditing"/>
+            <!-- <span class="currency">{{ currencySymbol }}</span> -->
+            
+            
+
+        </div>
+        <button (click)="isEditing = !isEditing">{{ isEditing ? 'Save' : 'Edit' }}</button>
+        
+        
+            
+            
+    </div>
+</div>
+<app-footer next="/review" back="/third-step"></app-footer>
+
+

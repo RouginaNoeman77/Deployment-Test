@@ -1,0 +1,185 @@
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <h4>{{property?.title}}</h4>
+        <hr/>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <dl class="row">
+                <dt class="col-sm-5">
+                    Description
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.description}}
+                </dd>
+                <dt class="col-sm-5">
+                    Address
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.address}}
+                </dd>
+                <dt class="col-sm-5">
+                    Type
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.type}}
+                </dd>
+                <dt class="col-sm-5">
+                    Region
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.region}}
+                </dd>
+                <dt class="col-sm-5">
+                    Area
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.area}}
+                </dd>
+                <dt class="col-sm-5">
+                    Category
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.category}}
+                </dd>
+                <dt class="col-sm-5">
+                    Number Of Guests
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.capacity}}
+                </dd>
+                <dt class="col-sm-5">
+                    Number Of Rooms
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.numberOfRooms}}
+                </dd>
+                <dt class="col-sm-5">
+                    Number Of Bathrooms
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.numberOfBathrooms}}
+                </dd>
+                <dt class="col-sm-5">
+                    Number Of Floors
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.numberOfFloors}}
+                </dd>
+                <ng-template #content let-modal>
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Pick Up Your Vacation Date</h4>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-6">
+                                <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+                                </ngb-datepicker>
+                                <ng-template #t let-date let-focused="focused">
+	                                <span
+                                        class="custom-day"
+                                        [class.focused]="focused"
+                                        [class.range]="isRange(date)"
+                                        [class.faded]="isHovered(date) || isInside(date)"
+                                        (mouseenter)="hoveredDate = date"
+                                        (mouseleave)="hoveredDate = null">
+		                                {{ date.day }}
+	                                </span>
+                                </ng-template>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <dl class="row">
+                                            <dt class="col-sm-3">From: </dt>
+                                            <dd class="col-sm-9" [(ngModel)]="this.newReservation.dateFrom" [ngModelOptions]="{standalone: true}">
+                                                {{ReservationFromDate}}
+                                            </dd>
+                                            <dt class="col-sm-7" style="margin-top: 10px;">Price Per Night: </dt>
+                                            <dd class="col-sm-5" style="margin-top: 10px;">
+                                                {{property?.pricePerNight}}
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <dl class="row">
+                                            <dt class="col-sm-3">To: </dt>
+                                            <dd class="col-sm-9" [(ngModel)]="this.newReservation.dateTo" [ngModelOptions]="{standalone: true}">
+                                                {{ ReservationToDate}}
+                                            </dd>
+                                            <dt class="col-sm-10" style="margin-top: 10px;">Total number of nights: </dt>
+                                            <dd class="col-sm-2" style="margin-top: 10px;">
+                                                {{daysDiff}}
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Total Bill: </dt>
+                                        <dd class="col-sm-5">
+                                            {{daysDiff * property?.pricePerNight}} LE
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); addReservation();"><span>Place Reservation</span></button>
+                    </div>
+                </ng-template>
+                <a class="btn btn-light col-sm-11" style="margin-left: 10px; margin-top: 14px; background-color: #fde02f;" (click)="open(content)" >Book</a>
+            </dl>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <ngb-carousel >
+                    <ng-template ngbSlide *ngFor="let i of property.prop_Images">
+                        <div class="picsum-img-wrapper" style="height: 300px; margin-bottom: 20px;">
+                                <img [src]="i.url" alt="Random first slide" style="height: 100%; width: 100%;" />
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+            <dl class="row">
+                <dt class="col-sm-5">
+                    Rating
+                </dt>
+                <dd class="col-sm-7">
+                    <ngb-rating [rate]="property?.averageRating"></ngb-rating>
+                </dd>
+                <dt class="col-sm-5">
+                    Price Per Night
+                </dt>
+                <dd class="col-sm-7">
+                    {{property?.pricePerNight}} /LE
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <h5>Reviews</h5>
+        <hr/>
+        <section class="main">
+            <div class="full-boxer">
+                <div class="col-md-4" *ngFor="let review of property.reviews;">
+                    <div class="comment-box">
+                        <div class="box-top">
+                            <div class="profile">
+                                <div class="profile-image">
+                                    <img [src]="review.userImgUrl" alt="Profile Image">
+                                </div>
+                                <div class="Name">
+                                    <strong>{{review.userFullName}}</strong>
+                                    <ngb-rating [rate]="review.rating"></ngb-rating>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <p>{{ review.reviewText }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="container">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 child">
+    <h2>Share some basics about your place</h2>
+    <span>You'll add more details later, like bed types.</span>
+    
+    <div class="rows-container">
+      <div class="row">
+        <div class="col-sm-8 mb-4">
+          <h5>Guests</h5>
+        </div>
+        <div class="col-sm-4  num">
+          
+          <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/minus.png" alt="minus" (click)="minusGuests()"/>
+            <span>{{this.service.obj.Capacity}}</span>
+            <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/plus.png" alt="plus" (click)="plusGuests()"/>
+          
+      </div>
+      <hr>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-8 mb-4">
+        <h5>Bedrooms</h5>
+      </div>
+      <div class="col-sm-4  num">
+        
+        <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/minus.png" alt="minus" (click)="minusRooms()"/> 
+          <span>{{this.service.obj.NumberOfRooms}}</span>
+          <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/plus.png" alt="plus" (click)="plusRooms()"/>
+        
+    </div>
+    <hr>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-8 mb-4">
+      <h5>Beds</h5>
+    </div>
+    <div class="col-sm-4  num">
+      
+      <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/minus.png" alt="minus" (click)="minusFloors()"/>
+        <span>{{this.service.obj.NumberOfFloors}}</span>
+        <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/plus.png" alt="plus" (click)="plusFloors()"/>
+      
+  </div>
+  <hr>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-8 mb-4">
+      <h5>Bathrooms</h5>
+    </div>
+    <div class="col-sm-4  num">
+      
+        <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/minus.png" alt="minus" (click)="minusBathrooms()"/>
+        <span>{{this.service.obj.NumberOfBathrooms}}</span>
+        <img width="40" height="40" src="https://img.icons8.com/wired/64/000000/plus.png" alt="plus" (click)="plusBathrooms()"/>
+      
+  </div>
+  </div>
+    </div>
+</div>
+</div>
+
+<app-footer next="/second-step" back="/location"></app-footer>
